@@ -1,0 +1,17 @@
+{
+  "name": "tag-thing",
+  "version": "1.0.0",
+  "description": "Tag items and then they'll show up in a tag cloud.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "angularjs": "0.0.1",
+    "brfs": "^1.4.0",
+    "browserify": "^10.2.4",
+    "watchify": "^3.2.3"
+  }
+}
