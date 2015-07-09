@@ -1,4 +1,12 @@
 <div class="thing-entry">
-  <input type="text" name="thing-entry" id="thing-entry" />
-  <button>Entry a thing</button>
+  <form ng-submit="thingEntry.addThing()">
+    <label for="thingTags">
+      <input type="text" id="thingTags" ng-model="thingEntry.thing.tags" />
+    </label>
+    <label for="thingDescription">
+      <input type="text" id="thingDescription" ng-model="thingEntry.thing.description" />
+    </label>
+
+    <button>Entry a thing</button>
+  </form>
 </div>

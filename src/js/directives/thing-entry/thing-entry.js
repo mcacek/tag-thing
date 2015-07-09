@@ -1,18 +1,27 @@
 var fs = require('fs');
 var path = require('path');
 
-var controller = function() {
+controller.$inject = ['$log'];
 
-};
+function controller($log) {
+  var vm = this;
+  vm.thing = {
+    dscription: '',
+    tags: ''
+  };
 
-controller.prototype.addThing = function() {
-  console.log('adding thing');
-};
+  vm.addThing = addThing;
+
+  function addThing() {
+    $log.info('adding thing', vm.thing);
+  }
+}
 
 module.exports = function() {
   return {
-    replace: true,
     scope: false,
+    controller: controller,
+    controllerAs: 'thingEntry',
     template: fs.readFileSync(path.join(__dirname, '/thing-entry.html'), 'utf8')
   };
 };
