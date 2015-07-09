@@ -6,6 +6,7 @@
   "rules": {
     "eqeqeq": 1,
     "strict": 0,
-    "quotes": [2, "single", "avoid-escape"]
+    "quotes": [2, "single", "avoid-escape"],
+    "no-use-before-define": 0
   }
 }
