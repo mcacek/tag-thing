@@ -1,5 +1,6 @@
 var angular = require('angular');
-var thingEntry = require('./directives/thing-entry/');
 
 angular.module('tagThing', [])
-  .directive('thingEntry', thingEntry);
+  .directive('thingEntry', require('./directives/thing-entry/'))
+  .directive('thingList', require('./directives/thing-list/'))
+  .service('thingService', require('./services/thing-service/'));

@@ -1,9 +1,9 @@
 var fs = require('fs');
 var path = require('path');
 
-controller.$inject = ['$log'];
+controller.$inject = ['thingService'];
 
-function controller($log) {
+function controller(thingService) {
   var vm = this;
   vm.thing = {
     dscription: '',
@@ -13,12 +13,13 @@ function controller($log) {
   vm.addThing = addThing;
 
   function addThing() {
-    $log.info('adding thing', vm.thing);
+    thingService.addThing(vm.thing);
   }
 }
 
 module.exports = function() {
   return {
+    restrict: 'E',
     scope: false,
     controller: controller,
     controllerAs: 'thingEntry',
