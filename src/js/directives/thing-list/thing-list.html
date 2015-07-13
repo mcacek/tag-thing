@@ -1,5 +1,5 @@
 <ul class="thing-list">
-  <li ng-repeat="thing in thingList.allOfTheThings" class="thing">
+  <li ng-repeat="thing in thingList.allOfTheThings track by thing.id" class="thing">
     <p class="thing-description">{{thing.description}}</p>
     <p class="thing-tags">
       <span ng-repeat="thingTag in thing.tags" class="thing-tag">{{thingTag}}</span>

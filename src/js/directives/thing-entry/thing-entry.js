@@ -1,19 +1,25 @@
 var fs = require('fs');
 var path = require('path');
+var angular = require('angular');
 
 controller.$inject = ['thingService'];
 
 function controller(thingService) {
   var vm = this;
   vm.thing = {
-    dscription: '',
+    description: '',
     tags: ''
   };
 
   vm.addThing = addThing;
 
   function addThing() {
-    thingService.addThing(vm.thing);
+    thingService.addThing(angular.copy(vm.thing));
+    reset();
+  }
+
+  function reset() {
+    thingEntryForm.reset();
   }
 }
 

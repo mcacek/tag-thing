@@ -12,7 +12,6 @@ function controller(thingService) {
     thingService.getThings()
       .then(function(data) {
         vm.allOfTheThings = data;
-        console.log(data);
       });
   }
 }

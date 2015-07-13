@@ -10,12 +10,9 @@ function thingService($log, $q) {
     updateThing: updateThing
   };
 
-  var things = [
-    {
-      description: 'thing #1',
-      tags: ['tag1', 'tag2', 'tag3']
-    }
-  ];
+  var idCount = 1;
+
+  var things = [];
 
   function getThings() {
     $log.info('Getting things');
@@ -24,6 +21,8 @@ function thingService($log, $q) {
 
   function addThing(thing) {
     $log.info('Adding thing:', thing);
+    thing.id = getId();
+    things.push(thing);
   }
 
   function deleteThing(thing) {
@@ -32,6 +31,10 @@ function thingService($log, $q) {
 
   function updateThing(thing) {
     $log.info('Updating thing:', thing);
+  }
+
+  function getId() {
+    return idCount++;
   }
 
   return service;
