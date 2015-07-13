@@ -1,6 +1,13 @@
 # Tag Thing
 Tag items and then they'll show up in a tag cloud.
 
-## Build JS
+## Build Assets
+### Automated Build
+Automated builds can run build to generated assets.
 
-`watchify -t brfs src/js/main.js -o assets/js/main.js`
+`gulp build`
+
+### Development
+During development the develop task will provide file watching and automatic rebuilding of assets.
+
+`gulp develop`
