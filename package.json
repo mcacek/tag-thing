@@ -14,11 +14,16 @@
     "browserify": "^10.2.4",
     "gulp": "^3.9.0",
     "gulp-eslint": "^0.15.0",
+    "gulp-less": "^3.0.3",
     "gulp-plumber": "^1.0.1",
     "requiredir": "^1.0.7",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.2.3"
   },
-  "browserify": { "transform": [ "brfs" ] }
+  "browserify": {
+    "transform": [
+      "brfs"
+    ]
+  }
 }
