@@ -1,15 +1,19 @@
-<div class="thing-entry">
+<div class="pure-form pure-form-stacked thing-entry">
   <form name="thingEntryForm" ng-submit="thingEntry.addThing()">
-    <label for="thingDescription">
-      Description
-      <input type="text" id="thingDescription" ng-model="thingEntry.thing.description" />
-    </label>
+    <fieldset>
+      <div class="pure-u-1">
+        <label for="thingDescription">Description</label>
+        <textarea id="thingDescription" name="thingDescription" class="pure-input-1" placeholder="Tell us about this.." ng-model="thingEntry.thing.description"></textarea>
+      </div>
 
-    <label for="thingTags">
-      Tags
-      <input type="text" id="thingTags" ng-model="thingEntry.thing.tags" />
-    </label>
+      <div class="pure-u-1">
+        <label for="thingTags">Tags</label>
+        <input type="text" id="thingTags" name="thingTags" class="pure-input-1" placeholder="Comma delimited list.." ng-model="thingEntry.thing.tags" />
+      </div>
 
-    <button>Entry a thing</button>
+      <div class="pure-u-1">
+        <button class="pure-button pure-button-primary pure-input-1">Add this thing!</button>
+      </div>
+    </fieldset>
   </form>
 </div>

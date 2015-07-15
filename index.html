@@ -2,13 +2,40 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Tag Thing</title>
     <link rel="stylesheet" href="assets/css/main.css">
   </head>
   <body ng-app="tagThing">
-    <thing-entry></thing-entry>
-    <thing-tag-cloud></thing-tag-cloud>
-    <thing-list></thing-list>
+    <header class="main-header">
+      <div class="content">
+        <h1>Tag Thing</h1>
+      </div>
+    </header>
+
+    <div id="main-content">
+      <div class="l-thing-entry">
+        <div class="content">
+          <h2 class="thing-entry-heading">1. New things</h2>
+          <thing-entry></thing-entry>
+        </div>
+      </div>
+
+      <div class="l-thing-cloud">
+        <div class="content">
+          <h2 class="thing-cloud-heading">2. The cloud.</h2>
+          <thing-tag-cloud></thing-tag-cloud>
+        </div>
+      </div>
+
+      <div class="l-thing-list">
+        <div class="content">
+          <h2 class="thing-list-heading">3. The list.</h2>
+          <thing-list></thing-list>
+        </div>
+      </div>
+    </div>
+
     <script src="assets/js/main.js"></script>
   </body>
 </html>
