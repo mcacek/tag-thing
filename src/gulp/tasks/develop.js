@@ -8,7 +8,7 @@ function develop(cb) { // eslint-disable-line
   });
 }
 
-gulp.task('develop', develop);
+gulp.task('develop', ['build'], develop);
 
 module.exports = {
   develop: develop
