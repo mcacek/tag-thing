@@ -7,44 +7,65 @@ controller.$inject = ['$log', '$scope', 'thingService'];
 function controller($log, $scope, thingService) {
   var vm = this;
   vm.allOfTheTags = {};
+  vm.theTags = theTags();
 
   $log.info('starting cloud');
 
   startup();
 
-  $scope.$on('thing-added', thingAdded);
-  $scope.$on('thing-removed', thingRemoved);
-
   function startup() {
-    var newTags = angular.copy(vm.allOfTheTags);
-
     thingService.getThings()
       .then(function(data) {
-        data.forEach(function(thing) {
-          thing.tags.forEach(function(tag) {
-            if (undefined !== newTags[tag]) { // Updating tag.
-              newTags[tag]++;
-            }
-            else { // New tag.
-              newTags[tag] = 1;
-            }
-          });
-
-          vm.allOfTheTags = newTags;
-        });
+        vm.allOfTheTags = addAllThings(data, vm.allOfTheTags);
+      })
+      .then(function() {
+        $scope.$on('thing-added', thingAdded);
+        $scope.$on('thing-removed', thingRemoved);
       });
   }
 
-  function thingAdded(thing) {
-    $log.info('thing added:', thing);
+  function theTags() {
+    return vm.allOfTheTags;
+  }
 
-    // Lookup tags in map and change counter;
+  function addThing(thing, tags) {
+    tags = angular.copy(tags);
+
+    angular.forEach(thing.tags, function(tag) {
+      if (tags[tag]) { // Updating tag.
+        tags[tag]++;
+      }
+      else { // New tag.
+        tags[tag] = 1;
+      }
+    });
+
+    return tags;
+  }
+
+  function addAllThings(things, tags) {
+    tags = angular.copy(tags);
+
+    angular.forEach(things, function(thing) {
+      tags = addThing(thing, tags);
+    });
+
+    return tags;
+  }
+
+  function removeThing(thing) {
+
+  }
+
+  function thingAdded(event, thing) {
+    $log.info('thing added:', thing);
+    vm.allOfTheTags = addThing(thing, vm.allOfTheTags);
   }
 
   function thingRemoved(thing) {
     $log.info('thing removed:', thing);
-
-    // Lookup tags in map and change counter;
+    removeThing(thing);
+    $scope.$apply();
   }
 }
 
