@@ -2,9 +2,9 @@ var fs = require('fs');
 var path = require('path');
 var angular = require('angular');
 
-controller.$inject = ['$log', '$scope', 'thingService'];
+controller.$inject = ['$log', '$scope', 'thingService', 'tagService'];
 
-function controller($log, $scope, thingService) {
+function controller($log, $scope, thingService, tagService) {
   var vm = this;
   vm.allOfTheTags = {};
   vm.theTags = theTags();
@@ -19,6 +19,7 @@ function controller($log, $scope, thingService) {
         vm.allOfTheTags = addAllThings(data, vm.allOfTheTags);
       })
       .then(function() {
+        $log.debug('max tag count:', tagService.getMaxTagCount(vm.allOfTheTags));
         $scope.$on('thing-added', thingAdded);
         $scope.$on('thing-removed', thingRemoved);
       });
