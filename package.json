@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "angular-mocks": "^1.4.3",
     "angularjs": "0.0.1",
     "brfs": "^1.4.0",
     "browserify": "^10.2.4",
@@ -29,5 +30,8 @@
     "transform": [
       "brfs"
     ]
+  },
+  "dependencies": {
+    "lodash": "^3.10.0"
   }
 }

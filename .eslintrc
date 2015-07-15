@@ -3,6 +3,10 @@
     "browser": true,
     "node": true
   },
+  "globals": {
+    "describe": true,
+    "it": true
+  },
   "rules": {
     "eqeqeq": 1,
     "strict": 0,
