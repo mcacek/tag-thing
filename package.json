@@ -12,6 +12,7 @@
     "angularjs": "0.0.1",
     "brfs": "^1.4.0",
     "browserify": "^10.2.4",
+    "eslint": "^0.24.1",
     "gulp": "^3.9.0",
     "gulp-batch": "^1.0.5",
     "gulp-eslint": "^0.15.0",
