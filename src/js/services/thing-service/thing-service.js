@@ -14,6 +14,13 @@ function thingService($log, $q) {
 
   var things = [];
 
+  [1, 2, 3, 4, 5].forEach(function(num) {
+    addThing({
+      description: "Thing #" +num,
+      tags: 'tag1, tag2, tag3'
+    });
+  });
+
   function getThings() {
     $log.info('Getting things');
     return $q.resolve(things);
@@ -22,6 +29,7 @@ function thingService($log, $q) {
   function addThing(thing) {
     $log.info('Adding thing:', thing);
     thing.id = getId();
+    thing.tags = thing.tags.split(',');
     things.push(thing);
   }
 
