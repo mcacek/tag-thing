@@ -9,8 +9,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "angular": "^1.4.3",
     "angular-mocks": "^1.4.3",
-    "angularjs": "0.0.1",
     "brfs": "^1.4.0",
     "browserify": "^10.2.4",
     "eslint": "^0.24.1",
