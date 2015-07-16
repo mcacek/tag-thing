@@ -6,7 +6,9 @@
   "globals": {
     "describe": true,
     "it": true,
-    "beforeEach": true
+    "beforeEach": true,
+    "inject": true,
+    "expect": true
   },
   "rules": {
     "eqeqeq": 1,
