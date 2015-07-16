@@ -24,6 +24,8 @@
     "karma": "^0.13.1",
     "karma-browserify": "^4.2.1",
     "karma-jasmine": "^0.3.6",
+    "karma-phantomjs-launcher": "^0.2.0",
+    "phantomjs": "^1.9.17",
     "purecss": "^0.6.0",
     "requiredir": "^1.0.7",
     "vinyl-buffer": "^1.0.0",
