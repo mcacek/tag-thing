@@ -18,7 +18,7 @@ function buildScripts() {
     .pipe(plumber())
     .pipe(source('main.js'))
     .pipe(buffer())
-    .pipe(gulp.dest('assets/js'));
+    .pipe(gulp.dest('public/assets/js'));
 }
 
 function checkScripts() {

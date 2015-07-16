@@ -13,7 +13,7 @@ function buildStyles() {
   gulp.src('src/less/main.less')
     .pipe(plumber())
     .pipe(less(options))
-    .pipe(gulp.dest('assets/css'));
+    .pipe(gulp.dest('public/assets/css'));
 }
 
 gulp.task('build-styles', buildStyles);
