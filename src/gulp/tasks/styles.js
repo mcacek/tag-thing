@@ -16,7 +16,7 @@ function buildStyles() {
     .pipe(gulp.dest('public/assets/css'));
 }
 
-gulp.task('build-styles', buildStyles);
+gulp.task('styles', buildStyles);
 
 module.exports = {
   buildStyles: buildStyles

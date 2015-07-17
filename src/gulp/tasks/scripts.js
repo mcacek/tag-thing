@@ -32,8 +32,8 @@ function checkScripts() {
     .pipe(eslint.format());
 }
 
-gulp.task('build-scripts', ['check-scripts'], buildScripts);
-gulp.task('check-scripts', checkScripts);
+gulp.task('scripts', ['scripts:check'], buildScripts);
+gulp.task('scripts:check', checkScripts);
 
 module.exports = {
   buildScripts: buildScripts,
