@@ -21,10 +21,14 @@ function thingService($log, $q, $rootScope) {
   function addThing(thing) {
     $log.info('Adding thing:', thing);
     thing.id = getId();
-    thing.tags = thing.tags.split(',');
+    thing.tags = thing.tags.split(',').map(function(tag) {
+      return tag.trim();
+    });
     things.push(thing);
 
     $rootScope.$emit('thing-added', thing);
+
+    return thing;
   }
 
   function deleteThing(thing) {
