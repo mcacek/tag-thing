@@ -19,7 +19,7 @@ function controller(thingService) {
   }
 
   function reset() {
-    thingEntryForm.reset();
+    thingEntryForm.reset(); // eslint-disable-line
   }
 }
 

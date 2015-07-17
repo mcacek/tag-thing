@@ -54,7 +54,7 @@ function controller($log, $scope, thingService, tagService) {
     return tags;
   }
 
-  function removeThing(thing) {
+  function removeThing(thing) { // eslint-disable-line
 
   }
 

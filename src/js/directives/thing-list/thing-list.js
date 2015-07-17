@@ -16,7 +16,7 @@ function controller(thingService) {
 
     [1, 2, 3, 4, 5].forEach(function(num) {
       thingService.addThing({
-        description: "Thing #" +num,
+        description: 'Thing #' + num,
         tags: 'tag1, tag2, tag3'
       });
     });
