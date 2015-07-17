@@ -4,6 +4,7 @@ var plumber = require('gulp-plumber');
 var buffer = require('vinyl-buffer');
 var source = require('vinyl-source-stream');
 var eslint = require('gulp-eslint');
+var gutil = require('gulp-util');
 
 var vendorDir = 'bower_components';
 
@@ -15,6 +16,9 @@ var options = {
 function buildScripts() {
   browserify('src/js/main.js', options)
     .bundle()
+    .on('error', function(err) {
+      gutil.log(gutil.colors.bgRed('Browserify error:'), gutil.colors.red(err.message));
+    })
     .pipe(plumber())
     .pipe(source('main.js'))
     .pipe(buffer())
