@@ -3,12 +3,12 @@ var watch = require('gulp-watch');
 //var batch = require('gulp-batch');
 
 function develop(cb) { // eslint-disable-line
-  watch('src/**/*.*', function (events, done) {
+  watch('src/**/*.*', function () {
     gulp.start('build');
   });
 }
 
-gulp.task('develop', ['build'], develop);
+gulp.task('develop', develop);
 
 module.exports = {
   develop: develop
