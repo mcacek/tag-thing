@@ -29,7 +29,7 @@ function checkScripts() {
 }
 
 gulp.task('build-scripts', ['check-scripts'], buildScripts);
-gulp.task('check-scripts', buildScripts);
+gulp.task('check-scripts', checkScripts);
 
 module.exports = {
   buildScripts: buildScripts,
