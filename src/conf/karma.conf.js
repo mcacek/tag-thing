@@ -10,24 +10,10 @@ module.exports = function(config) {
       '../../src/js/main.js': [ 'browserify' ],
       '../../js/**/*.spec.js': [ 'browserify' ]
     },
-    singleRun: true,
     browsers: ['PhantomJS'],
     browserify: {
       debug: true,
       transform: [ 'brfs' ]
-      // configure: function(bundle) {
-      //   bundle.on('prebundle', function() {
-      //     // prebundle and stuff
-      //   });
-      // }
-    },
-
-    client: {
-      mocha: {
-        ui: 'bdd'
-      }
-    },
-
-    reporters: ['nyan']
+    }
   });
 };

@@ -4,7 +4,7 @@ var watch = require('gulp-watch');
 
 function develop(cb) { // eslint-disable-line
   watch('src/**/*.*', function () {
-    gulp.start('build');
+    gulp.start(['scripts', 'styles']);
   });
 }
 
