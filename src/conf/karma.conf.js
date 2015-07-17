@@ -20,6 +20,13 @@ module.exports = function(config) {
       //     // prebundle and stuff
       //   });
       // }
+    },
+    reporters: ['nyan'],
+
+    // reporter options
+    nyanReporter: {
+      // suppress the error report at the end of the test run
+      suppressErrorReport: true
     }
   });
 };
