@@ -5,7 +5,7 @@ module.exports = function(config) {
       '../../node_modules/angular-mocks/angular-mocks.js',
       '../../src/js/**/*.spec.js'
     ],
-    frameworks: ['browserify', 'jasmine'],
+    frameworks: ['browserify', 'mocha', 'chai'],
     preprocessors: {
       '../../src/js/main.js': [ 'browserify' ],
       '../../js/**/*.spec.js': [ 'browserify' ]
@@ -21,12 +21,13 @@ module.exports = function(config) {
       //   });
       // }
     },
-    reporters: ['nyan'],
 
-    // reporter options
-    nyanReporter: {
-      // suppress the error report at the end of the test run
-      suppressErrorReport: true
-    }
+    client: {
+      mocha: {
+        ui: 'bdd'
+      }
+    },
+
+    reporters: ['nyan']
   });
 };

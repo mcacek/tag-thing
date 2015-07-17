@@ -8,6 +8,7 @@ describe('ThingService', function() {
   }));
 
   describe('#getThings', function() {
+
   });
 
   describe('#addThing', function() {

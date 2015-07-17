@@ -18,7 +18,7 @@ describe('TagService', function() {
       returnedSalience = tagService.getTagSalience(count, max);
 
       // then we should expect a value of 1
-      expect(returnedSalience).toEqual(1);
+      returnedSalience.should.equal(1);
     });
 
     it('should round up', function() {
@@ -31,7 +31,7 @@ describe('TagService', function() {
       returnedSalience = tagService.getTagSalience(count, max);
 
       // then we should expect a rounded up value
-      expect(returnedSalience).toEqual(2);
+      returnedSalience.should.equal(2);
     });
 
     it('should round down', function() {
@@ -44,7 +44,7 @@ describe('TagService', function() {
       returnedSalience = tagService.getTagSalience(count, max);
 
       // then we should expect a rounded down value
-      expect(returnedSalience).toEqual(1);
+      returnedSalience.should.equal(1);
     });
   });
 
@@ -58,7 +58,7 @@ describe('TagService', function() {
       returnedTagCount = tagService.getMaxTagCount(tags);
 
       // then the tag count should be 0
-      expect(returnedTagCount).toEqual(0);
+      returnedTagCount.should.equal(0);
     });
 
     it('should return the appropriate max count', function() {
@@ -74,7 +74,7 @@ describe('TagService', function() {
       returnedTagCount = tagService.getMaxTagCount(tags);
 
       // then the tag count should be the largest value
-      expect(returnedTagCount).toEqual(8);
+      returnedTagCount.should.equal(8);
     });
   });
 });
