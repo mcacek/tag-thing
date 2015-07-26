@@ -9,7 +9,13 @@ module.exports = {
   buildScripts: buildScripts
 };
 
-gulp.task('scripts', buildScripts);
+gulp.task('scripts', function() {
+  buildScripts(false);
+});
+
+gulp.task('scripts:handleErrors', function() {
+  buildScripts(true);
+});
 
 var vendorDir = 'bower_components';
 
@@ -18,13 +24,16 @@ var options = {
   paths: [vendorDir]
 };
 
-function buildScripts() {
-  browserify('src/js/main.js', options)
-    .bundle()
-    .on('error', function(err) {
-      gutil.log(gutil.colors.bgRed('Browserify error:'), gutil.colors.red(err.message));
-    })
-    .pipe(plumber())
+function buildScripts(handleErrors) {
+  var bundler = browserify('src/js/main.js', options).bundle();
+
+  if (handleErrors) {
+    bundler.on('error', function(err) {
+        gutil.log(gutil.colors.bgRed('Browserify error:'), gutil.colors.red(err.message));
+      });
+  }
+
+  return bundler.pipe(plumber())
     .pipe(source('main.js'))
     .pipe(buffer())
     .pipe(gulp.dest('public/assets/js'));
