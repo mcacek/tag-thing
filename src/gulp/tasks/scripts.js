@@ -13,7 +13,7 @@ gulp.task('scripts', function() {
   buildScripts(false);
 });
 
-gulp.task('scripts:handleErrors', function() {
+gulp.task('scripts:dev', function() {
   buildScripts(true);
 });
 

@@ -1,5 +1,4 @@
 var gulp = require('gulp');
-var plumber = require('gulp-plumber');
 var eslint = require('gulp-eslint');
 var cached = require('gulp-cached');
 
@@ -12,8 +11,8 @@ gulp.task('check', ['check:scripts']);
 
 function checkScripts() {
   return gulp.src('src/js/**/*.js')
-    .pipe(plumber())
     .pipe(cached('check-scripts'))
     .pipe(eslint())
-    .pipe(eslint.format());
+    .pipe(eslint.format())
+    .pipe(eslint.failOnError());
 }
